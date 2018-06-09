@@ -11,7 +11,7 @@ import App from './App.vue';
 
 
 Vue.use(SemanticUIVue);
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
 const app = new Vue({
   render: h => h(App)
