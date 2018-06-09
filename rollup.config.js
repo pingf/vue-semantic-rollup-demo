@@ -14,7 +14,7 @@ import commonjs from "rollup-plugin-commonjs";
 const external = Object.keys(pkg.dependencies);
 const extensions = ['.js', '.vue'];
 const isProduction = !process.env.ROLLUP_WATCH;
-const globals = { vue: 'Vue' , 'semantic-ui-vue': 'SemanticUIVue'};
+const globals = { vue: 'Vue' , 'semantic-ui-vue': 'SemanticUIVue', vuex: 'Vuex'};
 
 const lintOpts = {
   extensions,
@@ -27,7 +27,8 @@ const plugins = [
         copy({
             "html/index.html": "dist/index.html",
             "node_modules/vue/dist/vue.min.js": "dist/vue.js",
-            "node_modules/semantic-ui-vue/dist/umd/semantic-ui-vue.min.js": "dist/sui.js"
+            "node_modules/semantic-ui-vue/dist/umd/semantic-ui-vue.min.js": "dist/sui.js",
+            "node_modules/vuex/dist/vuex.js": "dist/vuex.js"
         }),
     commonjs(),
   resolve({browser: true}),
